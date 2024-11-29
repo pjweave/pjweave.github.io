@@ -4,15 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Cyberweva is the platform created by Peter Weaver, a Certified Information Systens Security Professional (CISSP), with over 20 years' industry experience in software development, cloud architecture and cybersecurity. You will find cybersecurity advice and industry insights for security professionals, software developers, and organisations wishing to improve their cybersecurity posture. Stay safe.
