@@ -52,7 +52,7 @@ Containment techniques include:
 2. Isolation – move the affected system away from the rest of the network but allowing the attacker to communicate with CaC to not arouse suspicion. 
 3. Removal – completely remove the affected system away from the rest of the network. 
 
-# Eradication and recovery 
+## Eradication and recovery 
 * Eradication – removes all traces of an incident. 
 * Recovery – restores normal operations. 
 
