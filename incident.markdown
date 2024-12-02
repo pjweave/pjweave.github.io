@@ -4,6 +4,13 @@ title: Incident response
 permalink: /incident/
 ---
 
+The [NIST SP 800-61r2 computer security incident handling guide][irl] defines the incident response life cycle that underpins the Security+ incident response subject matter and many other cybersecurity curricula. The life cycle is depicted as a multi-phase, cyclical process that should commence with a preparation phase, culminating in a post-incident activity, essentially a reflection on the lessons learned from the incident to improve future incident response efforts.
+
+![NIST incident response life cycle][irlimg]
+
+[irl]: https://doi.org/10.6028/NIST.SP.800-61r2
+[irlimg]: /images/800-61r2-irl.bmp "NIST incident response life cycle"
+
 ## Identification 
 Use the following sources to help identify and incident: 
 
@@ -52,7 +59,7 @@ Containment techniques include:
 2. Isolation – move the affected system away from the rest of the network but allowing the attacker to communicate with CaC to not arouse suspicion. 
 3. Removal – completely remove the affected system away from the rest of the network. 
 
-# Eradication and recovery 
+## Eradication and recovery 
 * Eradication – removes all traces of an incident. 
 * Recovery – restores normal operations. 
 
