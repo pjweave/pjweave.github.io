@@ -12,7 +12,7 @@ The [NIST SP 800-61r2 computer security incident handling guide][irl] defines th
 [irlimg]: /images/800-61r2-irl.bmp "NIST incident response life cycle"
 
 ## Identification 
-Use the following sources to help identify and incident: 
+Use the following sources to help identify an incident: 
 
 1. IDS/IPS 
 2. Firewalls 
