@@ -9,12 +9,13 @@ categories: forensics
 [tdl]: https://www.cgsecurity.org/wiki/TestDisk
 [dftl]: https://dftt.sourceforge.net/
 [skl]: https://sleuthkit.org/index.php
+[skdl]: https://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview
 
-Some useful Sleuth Kit commands are:
-- istat: useful for pulling inode information from a hidden partition. An <b>inode</b> is a file system metadata structure that is used to store and organise file object information (e.g., file size, owner user, permissions, and timestamps.
-- mmls: can be used to determine the layout of a disk, including offsets of any hidden partitions and unallocated space.
-- tsk_recover: can automatically recover deleted files from drive images, copying them to a local directory.
-- fls: useful for pulling information from hidden partitions, and listing allocated and deleted file names.
-- fsstat: can be used for displaying details of the file system(s) on a drive image.
+Some useful Sleuth Kit commands are as follows. Refer to the detailed documentation[skdl] for more information:
+- <b>istat</b>: useful for pulling inode information from a hidden partition. An <b>inode</b> is a file system metadata structure that is used to store and organise file object information (e.g., file size, owner user, permissions, and timestamps.
+- <b>mmls</b>: can be used to determine the layout of a disk, including offsets of any hidden partitions and unallocated space.
+- <b>tsk_recover</b>: can automatically recover deleted files from drive images, copying them to a local directory.
+- <b>fls</b>: useful for pulling information from hidden partitions, and listing allocated and deleted file names.
+- <b>fsstat</b>: can be used for displaying details of the file system(s) on a drive image.
 
   
