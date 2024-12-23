@@ -11,7 +11,7 @@ categories: forensics
 [skl]: https://sleuthkit.org/index.php
 [skdl]: https://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview
 
-Some useful Sleuth Kit commands are as follows. Refer to the detailed documentation[skdl] for more information:
+Some useful Sleuth Kit commands are as follows. Refer to the [detailed documentation][skdl] for more information:
 - <b>istat</b>: useful for pulling inode information from a hidden partition. An <b>inode</b> is a file system metadata structure that is used to store and organise file object information (e.g., file size, owner user, permissions, and timestamps.
 - <b>mmls</b>: can be used to determine the layout of a disk, including offsets of any hidden partitions and unallocated space.
 - <b>tsk_recover</b>: can automatically recover deleted files from drive images, copying them to a local directory.
