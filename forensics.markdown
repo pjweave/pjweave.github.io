@@ -44,23 +44,23 @@ Provides a paper trail of evidence. Evidence should be labelled and stored in a 
 5. Name of investigator, date and time, purpose, and nature of the action. 
 
 ## E-discovery
-A legal hold that requires the preservation of relevant electronic and paper records. Preservation à collection à production (present documents to the other side). Most litigation holds never move forward to the production phase. 
+A legal hold that requires the preservation of relevant electronic and paper records. 
 
-System administrators must suspend the automatic deletion of relevant logs. 
+1. Collection and preservation: ensure evidence is not tampered with and establish a provenance. System administrators must suspend the automatic deletion of relevant logs. Security teams and electronic discovery management systems often assist in collection efforts. 
+2. Production: present documents to the other side. Most litigation holds never move forward to the production phase. 
 
-Security teams often assist in collection efforts. Electronic discovery management systems coordinate collection efforts. Sources of electronic records: 
+Sources of electronic records: 
 
 1. File servers. 
 2. Endpoint systems. 
 3. Email messages. 
 4. Enterprise systems and cloud services. 
-5. Investigation data sources: Logs provide valuable evidence: 
-6. Firewall logs. 
-7. Application logs. 
-8. Endpoint logs. 
-9. OS-specific security logs. 
-10. IDS/IPS logs. 
-11. Network logs. 
+5. Firewall logs. 
+6. Application logs. 
+7. Endpoint logs. 
+8. OS-specific security logs. 
+9. IDS/IPS logs. 
+10. Network logs. 
 
 Other sources: 
 
