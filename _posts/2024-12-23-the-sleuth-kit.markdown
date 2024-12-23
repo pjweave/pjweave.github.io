@@ -9,3 +9,12 @@ categories: forensics
 [tdl]: https://www.cgsecurity.org/wiki/TestDisk
 [dftl]: https://dftt.sourceforge.net/
 [skl]: https://sleuthkit.org/index.php
+
+Some useful Sleuth Kit commands are:
+- istat
+- mmls
+- tsk_recover
+- fls
+- fsstat
+
+  
