@@ -11,10 +11,10 @@ categories: forensics
 [skl]: https://sleuthkit.org/index.php
 
 Some useful Sleuth Kit commands are:
-- istat
-- mmls
-- tsk_recover
-- fls
-- fsstat
+- istat: useful for pulling inode information from a hidden partition. An <b>inode</b> is a file system metadata structure that is used to store and organise file object information (e.g., file size, owner user, permissions, and timestamps.
+- mmls: can be used to determine the offset of a hidden partition.
+- tsk_recover: can automatically recover deleted files from drive images.
+- fls: useful for pulling information from hidden partitions.
+- fsstat: can be used for displaying details of the file system(s) on a drive image.
 
   
