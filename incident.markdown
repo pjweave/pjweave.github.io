@@ -3,6 +3,7 @@ layout: page
 title: Incident response
 permalink: /incident/
 ---
+![Datacentre surveillance][irhimg]
 
 The [NIST SP 800-61r2 computer security incident handling guide][irl] defines the incident response life cycle that underpins the Security+ incident response subject matter and many other cybersecurity curricula. The life cycle is depicted as a multi-phase, cyclical process that should commence with a preparation phase, culminating in a post-incident activity, essentially a reflection on the lessons learned from the incident to improve future incident response efforts.
 
@@ -10,6 +11,7 @@ The [NIST SP 800-61r2 computer security incident handling guide][irl] defines th
 
 [irl]: https://doi.org/10.6028/NIST.SP.800-61r2
 [irlimg]: /images/800-61r2-irl.bmp "NIST incident response life cycle"
+[irhimg]: /images/incident%20response.jpg "Datacentre surveillance"
 
 ## Identification 
 Use the following sources to help identify an incident: 
