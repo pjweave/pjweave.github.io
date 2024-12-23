@@ -3,9 +3,9 @@ layout: page
 title: Digital forensics
 permalink: /forensics/
 ---
-
+![Disk platter][irhimg]
 Investigative techniques to collect, preserve, analyse, and interpret digital evidence. 
-
+[irlimg]: /images/digital-forensics.jpg "Disk platter"
 ## #1 principle
 Investigations must <b>never alter evidence</b>. Create copies (or images) of the original physical evidence and analyse the image during analysis. Never try to perform forensics yourself unless you’ve received appropriate training. 
 
