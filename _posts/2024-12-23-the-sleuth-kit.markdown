@@ -4,16 +4,8 @@ title:  "The Sleuth Kit"
 date:   2024-12-23 12:59:42 +0000
 categories: forensics
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+<b>File carving</b> is the process of recovering access to files that have been corrupted, partially lost, deleted, or inaccessible due to partition structure damage. To demonstrate file carving, a Virtual Lab environment was created running a Kali Linux virtual machine, which came preinstalled with a number of excellent tools for performing digital forensics, namely the very powerful, and free [testdisk][tdl] open-source utility, and the [Sleuth Kit][skl], a collection of command-line tools that can be used to analyse and recover files from disk images. Anyone wishing to evaluate the software and practice their digital forensics skills are encouraged to try these tools out! There are also a number of freely downloadable test images to play with, available from the [Digital Forensics Tool Testing Images repository][dftl].
 
-Jekyll requires blog post files to be named according to the following format:
-
-`YEAR-MONTH-DAY-title.MARKUP`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[tdl]: https://www.cgsecurity.org/wiki/TestDisk
+[dftl]: https://dftt.sourceforge.net/
+[skl]: https://sleuthkit.org/index.php
