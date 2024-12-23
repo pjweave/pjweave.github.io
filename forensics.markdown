@@ -3,7 +3,7 @@ layout: page
 title: Digital forensics
 permalink: /forensics/
 ---
-![Disk platter][irhimg]
+![Disk platter][irhimg] 
 Investigative techniques to collect, preserve, analyse, and interpret digital evidence. 
 [irlimg]: /images/digital-forensics.jpg "Disk platter"
 ## #1 principle
