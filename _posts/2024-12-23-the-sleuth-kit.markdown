@@ -22,4 +22,4 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 - <b>fsstat</b>: can be used for displaying details of the file system(s) on a drive image.
 
 ![testdisk main menu][tdmmimg]
-[tdmmimg]: /images/sleuth-kit/testdisk.png "Testdisk main menu"
+[tdmmimg]: ../images/sleuth-kit/testdisk.png "Testdisk main menu"
