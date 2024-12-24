@@ -24,5 +24,8 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 # testdisk
 ## main menu
 ![testdisk main menu][tdmmimg]
-
 [tdmmimg]: images/sleuth-kit/testdisk.png "Testdisk main menu" 
+## uncovering files
+![testdisk file recovery][tdfrimg]
+[tdfrimg]: images/sleuth-kit/testdisk-2.png "Testdisk uncovering files" 
+
