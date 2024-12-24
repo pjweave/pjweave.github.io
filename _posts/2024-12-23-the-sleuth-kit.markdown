@@ -23,7 +23,7 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 
 
 ![testdisk main menu][t]
-[t]: images/sleuth-kit/testdisk.png "Testdisk main menu"
+[t]: /images/sleuth-kit/testdisk.png "Testdisk main menu"
 
 
 
