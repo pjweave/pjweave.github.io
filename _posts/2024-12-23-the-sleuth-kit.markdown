@@ -22,8 +22,8 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 - <b>fsstat</b>: can be used for displaying details of the file system(s) on a drive image.
 
 
-![testdisk main menu][t]
-[t]: /images/sleuth-kit/testdisk.png "Testdisk main menu"
+![testdisk main menu][irlimg]
+[irlimg]: /images/800-61r2-irl.bmp "NIST incident response life cycle"
 
 
 
