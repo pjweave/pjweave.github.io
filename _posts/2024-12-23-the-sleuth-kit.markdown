@@ -23,7 +23,7 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 
 
 ![testdisk main menu][irlimg]
-[irlimg]: /images/800-61r2-irl.bmp "NIST incident response life cycle"
+[irlimg]: ../images/800-61r2-irl.bmp "NIST incident response life cycle"
 
 
 
