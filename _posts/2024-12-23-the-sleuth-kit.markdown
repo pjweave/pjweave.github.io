@@ -22,5 +22,5 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 - <b>fsstat</b>: can be used for displaying details of the file system(s) on a drive image.
 
 ![testdisk main menu][tdimg]
-
+sss
 [tdmimg]: ../images/digital-forensics.jpg "Disk platter" 
