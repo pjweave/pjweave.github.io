@@ -32,4 +32,8 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 
 [tdfrimg]: images/sleuth-kit/testdisk-2.png "Testdisk uncovering files" 
 
+# mmls
+## disk layout
+![mmls][mmlsimg]
 
+[mmlsimg]: images/sleuth-kit/mmls.png "mmls utility" 
