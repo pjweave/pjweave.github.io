@@ -25,15 +25,15 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 ## main menu
 ![testdisk main menu][tdmmimg]
 
-[tdmmimg]: images/sleuth-kit/testdisk.png "Testdisk main menu"
+[tdmmimg]: /images/sleuth-kit/testdisk.png "Testdisk main menu"
 
 ## uncovering files
 ![testdisk file recovery][tdfrimg]
 
-[tdfrimg]: images/sleuth-kit/testdisk-2.png "Testdisk uncovering files" 
+[tdfrimg]: /images/sleuth-kit/testdisk-2.png "Testdisk uncovering files" 
 
 # mmls
 ## disk layout
 ![mmls][mmlsimg]
 
-[mmlsimg]: images/sleuth-kit/mmls.png "mmls utility" 
+[mmlsimg]: /images/sleuth-kit/mmls.png "mmls utility" 
