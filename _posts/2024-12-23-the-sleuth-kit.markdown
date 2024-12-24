@@ -21,6 +21,6 @@ Some useful Sleuth Kit commands are as follows. Refer to the [detailed documenta
 - <b>fls</b>: useful for pulling information from hidden partitions, and listing allocated and deleted file names.
 - <b>fsstat</b>: can be used for displaying details of the file system(s) on a drive image.
 
-![testdisk main menu][tdimg]
+![testdisk main menu][tdmmimg]
 
-[tdimg]: ../images/digital-forensics.jpg "Disk platter" 
+[tdmmimg]: images/sleuth-kit/testdisk.png "Testdisk main menu" 
