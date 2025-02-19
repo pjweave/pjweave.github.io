@@ -1,39 +1,38 @@
 ---
 layout: post
-title:  "The Sleuth Kit"
-date:   2024-12-23 12:59:42 +0000
-categories: forensics
+title:  "Github Actions Importer"
+date:   2025-02-19 10:45:42 +0000
+categories: automation
 ---
-According to the recent [ISC2 Cybersecurity Workforce Study][isc2l], Security Analysis is one of the highest demand skills hiring managers are looking for in their cybersecurity teams. This comes as no surprise given the hostile online landscape businesses and individuals find themselves in. So, digital forensics and incident response are key areas aspiring security professionals may wish to hone their skills on. Today's focus will be on drive image analysis, where file carving plays a vital role.
+<p>First draft</p>
 
-<b>File carving</b> is the process of recovering access to files that have been corrupted, partially lost, deleted, or inaccessible due to partition structure damage. To demonstrate file carving, a Virtual Lab environment was created running a Kali Linux virtual machine (screenshots below), which came preinstalled with a number of excellent tools for performing digital forensics, namely the very powerful, and free [testdisk][tdl] open-source utility, and the [Sleuth Kit][skl], a collection of command-line tools that can be used to analyse and recover files from disk images. Anyone wishing to evaluate the software and practice their digital forensics skills are encouraged to try these tools out! There are also a number of freely downloadable test images to play with, available from the [Digital Forensics Tool Testing Images repository][dftl].
+<h2>Install the Github Actions Importer</h2>
 
-[isc2l]: https://media.isc2.org/-/media/Project/ISC2/Main/Media/documents/research/2024-ISC2-WFS.pdf
-[tdl]: https://www.cgsecurity.org/wiki/TestDisk
-[dftl]: https://dftt.sourceforge.net/
-[skl]: https://sleuthkit.org/index.php
-[skdl]: https://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview
+```bash
+gh extension install github/gh-actions-importer
+```
+</p>
+<h2>Verify the version</h2>
 
-Some useful Sleuth Kit commands are as follows. Refer to the [detailed documentation][skdl] for more information:
-- <b>istat</b>: useful for pulling inode information from a hidden partition. An <b>inode</b> is a file system metadata structure that is used to store and organise file object information (e.g., file size, owner user, permissions, and timestamps.
-- <b>mmls</b>: can be used to determine the layout of a disk, including offsets of any hidden partitions and unallocated space.
-- <b>tsk_recover</b>: can automatically recover deleted files from drive images, copying them to a local directory.
-- <b>fls</b>: useful for pulling information from hidden partitions, and listing allocated and deleted file names.
-- <b>fsstat</b>: can be used for displaying details of the file system(s) on a drive image.
+```bash
+gh actions-importer version
+```
+<h2>Establishing DevOps-Github connectivity and verifying the environment</h2>
+<p>Once the importer has been installed within Codespaces, follow steps 1-3 within the [Github configuring credentials guide][ghcc] to configure the credentials for connectivity between Azure DevOps and Github. If the connectivity is established, an environment file will be created within your repository that contains the various tokens and URLs, handy for performing future audits should you need to. It's import NOT to store these environment variables within public repository source control and it can be viewed by the world and would pose a massive security risk! Finally, the environment can then be verified using the following command.</p>
 
-## testdisk
-# main menu
-![testdisk main menu][tdmmimg]
+```bash
+gh actions-importer update
+```
+<p>With connectivity established, we are now ready to perform an audit.</p>
 
-[tdmmimg]: /images/sleuth-kit/testdisk.png "Testdisk main menu"
+<h2>Performing an audit</h2>
+<p>The audit command is used to connect to the DevOps organisation project from Github, and convert each DevOps pipeline to their respective Github Actions workflow. The audit function is particulary powerful as it will simply comment-out parts of the pipeline definition YML file that it can't find exact transformations for, leaving you with workable workflows straight off the bat that can be tweaked to your liking. Running the following command will perform the audit, using the stored environment variables to establish connectivity, and outputing the audit reports to the output directory specified, in this instance, <code>tmp/audit</code>. It will also create workflow translations of your DevOps pipelines, writing the respective YML workflow definition files to the <code>pipelines/{project}</code> folder within the audit output directory.</p>
 
-# uncovering files
-![testdisk file recovery][tdfrimg]
+```bash
+gh actions-importer audit azure-devops --output-dir tmp/audit
+```
+<h2>The audit report</h2>
+<p>The audit report is created in markdown format, and contains a detailed breakdown of the DevOps pipeline definitions that it was able to convert, or did not find direct translations for. Instances where the importer could not perform direct translations are handled gracefully, and those specific sections within the YML workflows are commented out; refer to the [Github audit report summary page][ghars] for more details.</p>
 
-[tdfrimg]: /images/sleuth-kit/testdisk-2.png "Testdisk uncovering files" 
-
-## mmls
-# disk layout
-![mmls][mmlsimg]
-
-[mmlsimg]: /images/sleuth-kit/mmls.png "mmls utility" 
+[ghcc]: https://github.com/actions/importer-labs/blob/main/azure_devops/1-configure.md#configuring-credentials
+[ghars]: https://github.com/actions/importer-labs/blob/main/azure_devops/2-audit.md#review-audit-summary
