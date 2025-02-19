@@ -4,35 +4,46 @@ title:  "Github Actions Importer"
 date:   2025-02-19 10:45:42 +0000
 categories: automation
 ---
-<p>First draft</p>
+Github have been the champions of source control and the development corner for many decades. Indeed, this industry reputation proved an attractive prospect for Microsoft, who, back in 2019, completed an [acquisition of Github][mgh] for a massive $7.5 billion. Since that time, as [techcrunch points out][tc], this relationship has been fruitful, producing Actions and Codespaces to name but two, without Github losing any of its own identity in the process; a remarkable example of two brand giants co-existing and co-creating impactful industry tooling. 
 
-<h2>Install the Github Actions Importer</h2>
+So what does this trajectory mean for organisations invested in Microsoft development tooling? For example, with many Azure DevOps features now available in Github (and arguably done better), do organisations need to be investing in Github tooling, migration efforts and workplace training to meet this development? There is not an immedidate need to ditch DevOps just yet, with many Github-powered features predominantely in the [Azure Devop's product roadmap][rm], however it would be wise to migrate parts of the developnent lifecycle to Github for organisational future proofing. With regards training developers in all things Github, there are excellent resources provided by Microsoft, and even certifications to prove your skill; I've taken one and found it to be both comprehensive and timely, given our own organisation's recent interest in Github and moving its development efforts there. 
+
+## Actions in action
+One part of the development lifecycle done exceedingly well in Github is automated deployment (and security for that matter, but that's for another blog post). Github Actions are a powerful and natural evolution of Azure DevOps pipelines, staples of Continuous Integration / Continuous delivery (CI/CD) in Microsoft territory. For those organisations invested heavily in DevOps pipelines but wish to utilise these Github capabilities, Github have produced an astonishingly powerful migration tool that will analyse your existing DevOps project, replicate your YML pipeline definitions into your Github repository, and with graceful handling of DevOps pipeline nomenclature, get DevOps (surely now "GitOps") engineers working deployment automation workflows almost instantly. Very impressive stuff, and who doesn't like almost painless migration! Spinning up a Github Codespace within your target repository, you can perform the following steps:
+
+## Install the Github Actions Importer
+
+When the Codespace spins up, you will be presented with a bash shell; incidently, the look and feel of Codespace will be familiar to those developers used to Microsoft Visual Studio Code (Microsoft code-reuse in action!). Enter the following command in your shell prompt to install the Github Actions importer:
 
 ```bash
 gh extension install github/gh-actions-importer
 ```
-</p>
-<h2>Verify the version</h2>
+## Verify the version
+
+You can verify the install went successfully by running:
 
 ```bash
 gh actions-importer version
 ```
-<h2>Establishing DevOps-Github connectivity and verifying the environment</h2>
-<p>Once the importer has been installed within Codespaces, follow steps 1-3 within the [Github configuring credentials guide][ghcc] to configure the credentials for connectivity between Azure DevOps and Github. If the connectivity is established, an environment file will be created within your repository that contains the various tokens and URLs, handy for performing future audits should you need to. It's import NOT to store these environment variables within public repository source control and it can be viewed by the world and would pose a massive security risk! Finally, the environment can then be verified using the following command.</p>
+## Establishing DevOps-Github connectivity and verifying the environment
+Once the importer has been installed within Codespaces, follow steps 1-3 within the [Github configuring credentials guide][ghcc] to configure the credentials for connectivity between Azure DevOps and Github. If the connectivity is established, an environment file will be created within your repository that contains the various tokens and URLs, handy for performing future audits should you need to. It's import NOT to store these environment variables within public repository source control and it can be viewed by the world and would pose a massive security risk! Finally, the environment can then be verified using the following command.
 
 ```bash
 gh actions-importer update
 ```
-<p>With connectivity established, we are now ready to perform an audit.</p>
+With connectivity established, we are now ready to perform an audit.
 
-<h2>Performing an audit</h2>
-<p>The audit command is used to connect to the DevOps organisation project from Github, and convert each DevOps pipeline to their respective Github Actions workflow. The audit function is particulary powerful as it will simply comment-out parts of the pipeline definition YML file that it can't find exact transformations for, leaving you with workable workflows straight off the bat that can be tweaked to your liking. Running the following command will perform the audit, using the stored environment variables to establish connectivity, and outputing the audit reports to the output directory specified, in this instance, <code>tmp/audit</code>. It will also create workflow translations of your DevOps pipelines, writing the respective YML workflow definition files to the <code>pipelines/{project}</code> folder within the audit output directory.</p>
+## Performing an audit
+The audit command is used to connect to the DevOps organisation project from Github, and convert each DevOps pipeline to their respective Github Actions workflow. The audit function is particulary powerful as it will simply comment-out parts of the pipeline definition YML file that it can't find exact transformations for, leaving you with workable workflows straight off the bat that can be tweaked to your liking. Running the following command will perform the audit, using the stored environment variables to establish connectivity, and outputing the audit reports to the output directory specified, in this instance, <code>tmp/audit</code>. It will also create workflow translations of your DevOps pipelines, writing the respective YML workflow definition files to the <code>pipelines/{project}</code> folder within the audit output directory.
 
 ```bash
 gh actions-importer audit azure-devops --output-dir tmp/audit
 ```
-<h2>The audit report</h2>
-<p>The audit report is created in markdown format, and contains a detailed breakdown of the DevOps pipeline definitions that it was able to convert, or did not find direct translations for. Instances where the importer could not perform direct translations are handled gracefully, and those specific sections within the YML workflows are commented out; refer to the [Github audit report summary page][ghars] for more details.</p>
+## The audit report
+The audit report is created in markdown format, and contains a detailed breakdown of the DevOps pipeline definitions that it was able to convert, or did not find direct translations for. Instances where the importer could not perform direct translations are handled gracefully, and those specific sections within the YML workflows are commented out; refer to the [Github audit report summary page][ghars] for more details.
 
 [ghcc]: https://github.com/actions/importer-labs/blob/main/azure_devops/1-configure.md#configuring-credentials
 [ghars]: https://github.com/actions/importer-labs/blob/main/azure_devops/2-audit.md#review-audit-summary
+[mgh]: https://blogs.microsoft.com/blog/2018/10/26/microsoft-completes-github-acquisition/
+[tc]: https://techcrunch.com/2022/10/26/four-years-after-being-acquired-by-microsoft-github-keeps-doing-its-thing/
+[rm]: https://learn.microsoft.com/en-us/azure/devops/release-notes/features-timeline
