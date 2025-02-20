@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Github Actions Importer"
-date:   2025-02-19 10:45:42 +0000
+date:   2025-02-20 16:55:42 +0000
 categories: automation
 ---
 Github have been the champions of source control and the development corner for many decades. Indeed, this industry reputation proved an attractive prospect for Microsoft, who, back in 2019, completed an [acquisition of Github][mgh] for a massive $7.5 billion. Since that time, as [techcrunch points out][tc], this relationship has been fruitful, producing Actions and Codespaces to name but two, without Github losing any of its own identity in the process; a remarkable example of two brand giants co-existing and co-creating impactful industry tooling. 
