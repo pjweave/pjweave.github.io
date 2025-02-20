@@ -52,8 +52,9 @@ gh actions-importer audit azure-devops --output-dir tmp/audit
 ```
 The command output should resemble the following:
 
+![audit command output][acimg]
 
-
+[acimg]: /images/actions-importer/audit-command.png "Audit command output"
 
 ## The audit report
 The audit report is created in markdown format, and contains a detailed breakdown of the DevOps pipeline definitions that it was able to convert, or did not find direct translations for. Instances where the importer could not perform direct translations are handled gracefully, and those specific sections within the YML workflows are commented out; refer to the [Github audit report summary page][ghars] for more details.
