@@ -13,7 +13,7 @@ One part of the development lifecycle done exceedingly well in Github is automat
 
 ## Install the Github Actions Importer
 
-When the Codespace spins up, you will be presented with a bash shell; incidently, the look and feel of Codespace will be familiar to those developers used to Microsoft Visual Studio Code (Microsoft code-reuse in action!). Enter the following command in your shell prompt to install the Github Actions importer:
+When the Codespace finishes spinning up, you will be presented with a bash shell; incidently, the look and feel of the Codespace will be familiar to those developers used to working in Microsoft Visual Studio Code (Microsoft code-reuse in action!). Enter the following command in your shell prompt to install the Github Actions importer:
 
 ```bash
 gh extension install github/gh-actions-importer
@@ -26,7 +26,18 @@ You can verify the install went successfully by running:
 gh actions-importer version
 ```
 ## Establishing DevOps-Github connectivity and verifying the environment
-Once the importer has been installed within Codespaces, follow steps 1-3 within the [Github configuring credentials guide][ghcc] to configure the credentials for connectivity between Azure DevOps and Github. If the connectivity is established, an environment file will be created within your repository that contains the various tokens and URLs, handy for performing future audits should you need to. It's import NOT to store these environment variables within public repository source control and it can be viewed by the world and would pose a massive security risk! Finally, the environment can then be verified using the following command.
+Once the importer has been installed within your Codespace, follow steps 1-3 within the [Github configuring credentials guide][ghcc] to configure the credentials for connectivity between Azure DevOps and Github. If the connectivity is established successfully, an environment file (<code>.env.local</code>) will be created within your repository route that contains the various tokens and URLs needed to perform the audit, handy for performing future audits should you need to. <b>Important:</b> For security reasons, it's imperative NOT to store these environment variables within public repository source control! The DevOps PAT, which should be created with the shortest possible lifespan, used as one half of the connectivity agreement has the following scopes, which are extensive privileges in the wrong hands:
+
+- Agents Pool: <code>Read</code>
+- Build: <code>Read & execute</code>
+- Code: <code>Read & write</code>
+- Project and Team: <code>Read, write, & manage</code>
+- Release: <code>Read</code>
+- Service Connections: <code>Read</code>
+- Task Groups: <code>Read</code>
+- Variable Groups: <code>Read</code>
+
+Finally, the environment can be verified using the following command:
 
 ```bash
 gh actions-importer update
@@ -34,11 +45,16 @@ gh actions-importer update
 With connectivity established, we are now ready to perform an audit.
 
 ## Performing an audit
-The audit command is used to connect to the DevOps organisation project from Github, and convert each DevOps pipeline to their respective Github Actions workflow. The audit function is particulary powerful as it will simply comment-out parts of the pipeline definition YML file that it can't find exact transformations for, leaving you with workable workflows straight off the bat that can be tweaked to your liking. Running the following command will perform the audit, using the stored environment variables to establish connectivity, and outputing the audit reports to the output directory specified, in this instance, <code>tmp/audit</code>. It will also create workflow translations of your DevOps pipelines, writing the respective YML workflow definition files to the <code>pipelines/{project}</code> folder within the audit output directory.
+The <code>audit</code> command is used to connect to the DevOps organisation project from the Github Codespace, and convert each DevOps pipeline to their respective Github Actions workflow. The audit function is particulary powerful as it will simply comment-out parts of the pipeline definition YML file that it can't find exact transformations for, leaving you with workable workflows straight off the bat that can be tweaked to your liking. Running the following command will perform the audit, using the stored environment variables to establish connectivity, and outputing the audit reports to the output directory specified, in this instance, <code>tmp/audit</code>. It will also create workflow translations of your DevOps pipelines, writing the respective YML workflow definition files to the <code>pipelines/{project}</code> folder within the audit output directory.
 
 ```bash
 gh actions-importer audit azure-devops --output-dir tmp/audit
 ```
+The command output should resemble the following:
+
+
+
+
 ## The audit report
 The audit report is created in markdown format, and contains a detailed breakdown of the DevOps pipeline definitions that it was able to convert, or did not find direct translations for. Instances where the importer could not perform direct translations are handled gracefully, and those specific sections within the YML workflows are commented out; refer to the [Github audit report summary page][ghars] for more details.
 
